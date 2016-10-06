@@ -540,6 +540,22 @@
             </div>
         </div><!-- end container -->
     </section><!-- end section -->
+    
+    <%= form_for @contact do |f| %>
+                                    <div class="form-group col-md-12 col-sm-6 col-xs-12">
+                                        <%= f.text_field :date, :required => true, :data => {:provide => "datepicker"}, class: "form-control datepicker", placeholder: "Trip Start" %>
+                                    </div>
+                                    <div class="form-group col-md-12 col-sm-6 col-xs-12">
+                                        <%= f.email_field :email, :required => true, placeholder: "Email", class: "form-control" %>
+                                    </div>
+                                    <div class= "hidden">
+                                      <%= f.text_field :nickname, :hint => 'Leave this field blank!' %>
+                                    </div>
+
+                                    <div class="form-group col-md-12 col-sm-6 col-xs-12">
+                                        <%= f.submit 'Send message', :class=> "btn btn-primary btn-block" %>
+                                    </div>
+                                    <% end %>
 
 
     <section id="here321" class="section contact-home fullscreen background parallax"  data-img-width="1921" data-img-height="665" data-diff="20">
@@ -549,24 +565,29 @@
             <p>Any concerns? Please send us an email and we will respond within 1 business day.</p>
             <div id="contact_form" class="contact_form">
                 <div id="message"></div>
-                <form id="contactform" class="row" action="http://trendingtemplates.com/demos/trips/contact.php" name="contactform" method="post">
+                <div id="contactform" class="row" action="http://trendingtemplates.com/demos/trips/contact.php" name="contactform" method="post">
+                  <%= form_for @contact do |f| %>
                     <div class="col-md-12 col-sm-12 col-xs-12">
                     <div class="form-group">
-                    <input type="text" name="name" id="name" class="form-control" placeholder="Name (required)">
-                    </div>
-                    </div>
-                    <div class="col-md-12 col-sm-12 col-xs-12">
-                    <div class="form-group">
-                    <input type="text" name="email" id="email" class="form-control" placeholder="Email required)">
+                    <%= f.text_field :name, id: "name", :required => true, placeholder: "Name (required)", class: "form-control" %>
                     </div>
                     </div>
                     <div class="col-md-12 col-sm-12 col-xs-12">
                     <div class="form-group">
-                    <textarea class="form-control" name="comments" id="comments" rows="8" placeholder="Comments (required)"></textarea>
+                      <%= f.email_field :email, :required => true, id: "email", placeholder: "Email (required)", class: "form-control" %>
                     </div>
-                    <button type="submit" value="SEND" id="submit" class=" btn btn-primary btn-lg border-radius">SUBMIT</button>
                     </div>
-                </form>
+                    <div class="col-md-12 col-sm-12 col-xs-12">
+                    <div class="form-group">
+                      <%= f.text_area :message, :required => true, placeholder: "Comments (required)", class: "form-control" %>
+                    </div>
+                    <div class= "hidden">
+                        <%= f.text_field :nickname, :hint => 'Leave this field blank!' %>
+                    </div>
+                    <%= f.submit 'SUBMIT', id: "submit",  :class=> "btn btn-primary btn-lg border-radius" %>
+                    </div>
+                    <% end %>
+                </div>
             </div><!-- end contact-form -->
             </div>
         </div><!-- end container -->
