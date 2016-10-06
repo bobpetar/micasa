@@ -1,16 +1,16 @@
 <div align="center">
   <h3>Send A message to Us</h3>
 
-  <%= simple_form_for @contact, :html => {:class => 'form-horizontal' } do |f| %>
-    <%= f.input :name, :required => true %>
-    <%= f.input :email, :required => true %>
-    <%= f.input :message, :as => :text, :required => true %>
+  <%= form_for @contact, :html => {:class => 'form-horizontal' } do |f| %>
+    <%= f.text_field :name, :required => true, placehodler: "Name" %>
+    <%= f.email_field :email, :required => true, placehodler: "Email" %>
+    <%= f.text_area :message, :as => :text, :required => true, placehodler: "Your message" %>
     <div class= "hidden">
-      <%= f.input :nickname, :hint => 'Leave this field blank!' %>
+      <%= f.text_field :nickname, :hint => 'Leave this field blank!' %>
     </div>
     <div>
       </br>
-      <%= f.button :submit, 'Send message', :class=> "btn btn-primary" %>
+      <%= f.submit 'Send message', :class=> "btn btn-primary" %>
     </div>
   <% end %>
 </div>

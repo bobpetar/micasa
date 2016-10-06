@@ -28,7 +28,6 @@ gem 'twitter-bootstrap-rails'
 gem 'bootstrap-datepicker-rails'
 gem "jquery-slick-rails"
 gem 'mail_form'
-gem 'simple_form'
 
 
 # Use ActiveModel has_secure_password

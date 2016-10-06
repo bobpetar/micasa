@@ -1,8 +1,94 @@
-<div>
-  <% flash.each do |key, value| %>
-    <div>
-      <a href="#" data-dismiss="alert">×</a>
-        <%= value %>
-    </div>
-  <% end %>
-</div>
+
+<div id="wrapper">
+    
+    <div class="topbar">
+        <div class="container">
+            <div class="pull-left">
+                <ul class="topbar-drops list-inline">
+                    <li><a href="#"><i class="fa fa-globe" aria-hidden="true"></i> ENGLISH</a></li>
+                    <li><i class="fa fa-phone" aria-hidden="true"></i> 1800-XXXX-XXXX</li>
+                </ul><!-- end list-style -->
+            </div><!-- end left -->
+            <div class="pull-right">
+                <ul class="topbar-social list-inline">
+                    <li><a href="#"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
+                    <li><a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+                    <li><a href="#"><i class="fa fa-pinterest" aria-hidden="true"></i></a></li>
+                    <li><a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></i></a></li>                    
+                    <li>
+                     <button type="button" class="btn btn-primary login-top" data-toggle="modal" data-target=".bs-example-modal-sm">LOGIN</button>
+                        <div class="modal fade bs-example-modal-sm" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel">
+                          <div class="modal-dialog modal-sm home" role="document">
+                            <div class="modal-content home">                             
+                                <form>
+                                    <div class="form-group">
+                                        <label for="inputEmail">Email</label>
+                                        <input type="email" class="form-control" id="inputEmail" placeholder="Email">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="inputPassword">Password</label>
+                                        <input type="password" class="form-control" id="inputPassword" placeholder="Password">
+                                    </div>
+                                    <div class="checkbox">
+                                        <label><input type="checkbox"> Remember me</label>
+                                    </div>
+                                    <button type="submit" class="btn btn-primary popup-login">Login</button>
+                                    <a class="forget" href="#">Forgot your password?</a>
+                                </form>
+                            </div>
+                          </div>
+                        </div>
+                    </li>
+                    <li><a href="sign.html">REGISTER</a></li>
+                </ul><!-- end list-style -->
+            </div><!-- end right -->
+        </div><!-- end container -->
+    </div><!-- end topbar -->
+
+    <header class="header fixedheader nobg">
+        <div class="menu-container">
+            <div class="container">
+                <div class="menu-wrapper">
+                    <nav id="navigation" class="navbar" role="navigation">
+                        <div class="navbar-inner">
+                            <div class="navbar-header">
+                                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                                    <span class="sr-only">Toggle navigation</span>
+                                    <i class="icon-menu27"></i>
+                                </button>
+                                <a id="brand" class="clearfix navbar-brand-logo" href="index.html"><%= image_tag 'logo.png' %></a>
+                            </div><!-- end navbar-header -->
+                            <div id="navbar-collapse" class="navbar-right navbar-collapse collapse clearfix">
+                                <ul class="nav navbar-nav yamm">
+                                    <li><a href="#">HOME</a></li>
+                                    <li><a href="#">CITIES</a></li>
+                                    <li><a href="#">OUR SERVICES</a></li>
+                                    <li><a href="#">TESTIMONIALS</a></li>                      
+                                    <li><a href="#">MEET OUR LOCALS</a></li>
+                                    <li><a href="#">FAQS</a></li>
+                                    <li><a href="#">CONTACT US</a></li>
+                                </ul><!-- end navbar-right -->
+                            </div><!-- end navbar-callopse -->
+                        </div><!-- end navbar-inner -->
+                    </nav><!-- end navigation -->
+                </div><!-- menu wrapper -->
+            </div><!-- end container -->
+        </div><!-- end menu-container -->
+    </header><!-- end header -->
+
+    <section id="here123" class="section fullscreen background parallax" >
+        <div class="container">
+            <div class="row homeform">
+               
+                <div class="col-xs-12">
+                    <div class="home-message">
+                        <h1 align="center">Thank you for your message !</h1>
+                        <p class="lead" align="center">We'll get back to you soon.</p>
+                        <div class="col-sm-2 col-sm-offset-5">
+                          <%= link_to 'Home', root_path, class: "btn btn-primary btn-lg border-radius", align: "center" %>
+                        </div>
+                    </div><!-- end homemessage -->
+                </div><!-- end col -->
+            </div><!-- end row -->
+        </div><!-- end container -->
+    </section><!-- end section --> 
