@@ -1,16 +1,633 @@
-<div align="center">
-  <h3>Send A message to Us</h3>
 
-  <%= form_for @contact, :html => {:class => 'form-horizontal' } do |f| %>
-    <%= f.text_field :name, :required => true, placehodler: "Name" %>
-    <%= f.email_field :email, :required => true, placehodler: "Email" %>
-    <%= f.text_area :message, :as => :text, :required => true, placehodler: "Your message" %>
-    <div class= "hidden">
-      <%= f.text_field :nickname, :hint => 'Leave this field blank!' %>
+
+
+<div id="wrapper">
+    
+    <div class="topbar">
+        <div class="container">
+            <div class="pull-left">
+                <ul class="topbar-drops list-inline">
+                    <li><a href="#"><i class="fa fa-globe" aria-hidden="true"></i> ENGLISH</a></li>
+                    <li><i class="fa fa-phone" aria-hidden="true"></i> 1800-XXXX-XXXX</li>
+                </ul><!-- end list-style -->
+            </div><!-- end left -->
+            <div class="pull-right">
+                <ul class="topbar-social list-inline">
+                    <li><a href="#"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
+                    <li><a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+                    <li><a href="#"><i class="fa fa-pinterest" aria-hidden="true"></i></a></li>
+                    <li><a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></i></a></li>                    
+                    <li>
+                     <button type="button" class="btn btn-primary login-top" data-toggle="modal" data-target=".bs-example-modal-sm">LOGIN</button>
+                        <div class="modal fade bs-example-modal-sm" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel">
+                          <div class="modal-dialog modal-sm home" role="document">
+                            <div class="modal-content home">                             
+                                <form>
+                                    <div class="form-group">
+                                        <label for="inputEmail">Email</label>
+                                        <input type="email" class="form-control" id="inputEmail" placeholder="Email">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="inputPassword">Password</label>
+                                        <input type="password" class="form-control" id="inputPassword" placeholder="Password">
+                                    </div>
+                                    <div class="checkbox">
+                                        <label><input type="checkbox"> Remember me</label>
+                                    </div>
+                                    <button type="submit" class="btn btn-primary popup-login">Login</button>
+                                    <a class="forget" href="#">Forgot your password?</a>
+                                </form>
+                            </div>
+                          </div>
+                        </div>
+                    </li>
+                    <li><a href="sign.html">REGISTER</a></li>
+                </ul><!-- end list-style -->
+            </div><!-- end right -->
+        </div><!-- end container -->
+    </div><!-- end topbar -->
+
+    <header class="header fixedheader nobg">
+        <div class="menu-container">
+            <div class="container">
+                <div class="menu-wrapper">
+                    <nav id="navigation" class="navbar" role="navigation">
+                        <div class="navbar-inner">
+                            <div class="navbar-header">
+                                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                                    <span class="sr-only">Toggle navigation</span>
+                                    <i class="icon-menu27"></i>
+                                </button>
+                                <a id="brand" class="clearfix navbar-brand-logo" href="index.html"><%= image_tag 'logo.png' %></a>
+                            </div><!-- end navbar-header -->
+                            <div id="navbar-collapse" class="navbar-right navbar-collapse collapse clearfix">
+                                <ul class="nav navbar-nav yamm">
+                                    <li><a href="#">HOME</a></li>
+                                    <li><a href="#">CITIES</a></li>
+                                    <li><a href="#">OUR SERVICES</a></li>
+                                    <li><a href="#">TESTIMONIALS</a></li>                      
+                                    <li><a href="#">MEET OUR LOCALS</a></li>
+                                    <li><a href="#">FAQS</a></li>
+                                    <li><a href="#">CONTACT US</a></li>
+                                </ul><!-- end navbar-right -->
+                            </div><!-- end navbar-callopse -->
+                        </div><!-- end navbar-inner -->
+                    </nav><!-- end navigation -->
+                </div><!-- menu wrapper -->
+            </div><!-- end container -->
+        </div><!-- end menu-container -->
+    </header><!-- end header -->
+
+    <section id="here123" class="section fullscreen background parallax" >
+        <div class="container">
+            <div class="row homeform">
+                <div class="col-md-5 col-xs-12">
+                  
+                    <div class="home-form">
+                        <!-- Nav tabs -->
+                        <ul class="nav nav-tabs" role="tablist">
+                        <li class="first active"><a href="#tab_01" class="tab1" aria-controls="tab_01" role="tab" data-toggle="tab"></a></li>
+                        
+                        <li class="second"><a href="#tab_02" class="tab2" aria-controls="tab_02" role="tab" data-toggle="tab"></a></li>
+                        
+                        <li class="third"><a href="#tab_03" class="tab3" aria-controls="tab_03" role="tab" data-toggle="tab"></a></li>
+                        
+                        <li class="fourth"><a href="#tab_04" class="tab4" aria-controls="tab_04" role="tab" data-toggle="tab"></a></li>
+                        </ul>
+
+                        <div class="tab-content">
+                            <div role="tabpanel" class="tab-pane active" id="tab_01">
+                                <h6>Email Questions</h6>
+                                <div class="bookform form-inline row">
+                                    <%= form_for @contact do |f| %>
+                                    <div class="form-group col-md-12 col-sm-6 col-xs-12">
+                                        <%= f.text_field :date, :required => true, :data => {:provide => "datepicker"}, class: "form-control datepicker", placeholder: "Trip Start" %>
+                                    </div>
+                                    <div class="form-group col-md-12 col-sm-6 col-xs-12">
+                                        <%= f.email_field :email, :required => true, placeholder: "Email", class: "form-control" %>
+                                    </div>
+                                    <div class= "hidden">
+                                      <%= f.text_field :nickname, :hint => 'Leave this field blank!' %>
+                                    </div>
+
+                                    <div class="form-group col-md-12 col-sm-6 col-xs-12">
+                                        <%= f.submit 'Send message', :class=> "btn btn-primary btn-block" %>
+                                    </div>
+                                    <% end %>
+                                </div>
+                            </div><!-- end tab-pane -->
+
+                            <div role="tabpanel" class="tab-pane" id="tab_02">
+                                <h6>Speak with a Local</h6>
+                                <div class="bookform form-inline row">
+                                    <%= form_for @contact do |f| %>
+                                    <div class="form-group col-md-12 col-sm-6 col-xs-12">
+                                        <%= f.text_field :date, :required => true, :data => {:provide => "datepicker"}, class: "form-control datepicker", placeholder: "Trip Start" %>
+                                    </div>
+                                    <div class="form-group col-md-12 col-sm-6 col-xs-12">
+                                        <%= f.email_field :email, :required => true, placeholder: "Email", class: "form-control" %>
+                                    </div>
+                                    <div class= "hidden">
+                                      <%= f.text_field :nickname, :hint => 'Leave this field blank!' %>
+                                    </div>
+
+                                    <div class="form-group col-md-12 col-sm-6 col-xs-12">
+                                        <%= f.submit 'Send message', :class=> "btn btn-primary btn-block" %>
+                                    </div>
+                                    <% end %>
+                                </div>
+                            </div><!-- end tab-pane -->
+
+                            <div role="tabpanel" class="tab-pane" id="tab_03">
+                                <h6>Custom Trip Planning</h6>
+                                <div class="bookform form-inline row">
+                                    <%= form_for @contact do |f| %>
+                                    <div class="form-group col-md-12 col-sm-6 col-xs-12">
+                                        <%= f.text_field :date, :required => true, :data => {:provide => "datepicker"}, class: "form-control datepicker", placeholder: "Trip Start" %>
+                                    </div>
+                                    <div class="form-group col-md-12 col-sm-6 col-xs-12">
+                                        <%= f.email_field :email, :required => true, placeholder: "Email", class: "form-control" %>
+                                    </div>
+                                    <div class= "hidden">
+                                      <%= f.text_field :nickname, :hint => 'Leave this field blank!' %>
+                                    </div>
+
+                                    <div class="form-group col-md-12 col-sm-6 col-xs-12">
+                                        <%= f.submit 'Send message', :class=> "btn btn-primary btn-block" %>
+                                    </div>
+                                    <% end %>
+                                </div>
+                            </div><!-- end tab-pane -->
+
+                            <div role="tabpanel" class="tab-pane" id="tab_04">
+                                <h6>Custom Service</h6>
+                                <div class="bookform form-inline row">
+                                    <%= form_for @contact do |f| %>
+                                    <div class="form-group col-md-12 col-sm-6 col-xs-12">
+                                        <%= f.text_field :date, :required => true, :data => {:provide => "datepicker"}, class: "form-control datepicker", placeholder: "Trip Start" %>
+                                    </div>
+                                    <div class="form-group col-md-12 col-sm-6 col-xs-12">
+                                        <%= f.email_field :email, :required => true, placeholder: "Email", class: "form-control" %>
+                                    </div>
+                                    <div class= "hidden">
+                                      <%= f.text_field :nickname, :hint => 'Leave this field blank!' %>
+                                    </div>
+
+                                    <div class="form-group col-md-12 col-sm-6 col-xs-12">
+                                        <%= f.submit 'Send message', :class=> "btn btn-primary btn-block" %>
+                                    </div>
+                                    <% end %>
+                                </div>
+                            </div><!-- end tab-pane -->
+
+                            
+                        </div><!-- end tab-content -->
+                    </div><!-- end homeform -->
+                </div><!-- end col -->
+
+                <div class="col-md-7 col-xs-12">
+                    <div class="home-message">
+                        <h1>Travel Like a Local</h1>
+                        <p>MiCasa connects you to locals in Spain for trip planning and advice. Our locals have expertise in the best Spanish food, art, clubs, beaches and outdoor adventures. We will make sure you don't miss a thing on your Spanish holiday</p>
+                        <a href="#" class="btn btn-primary btn-lg border-radius">READ MORE</a>
+                    </div><!-- end homemessage -->
+                </div><!-- end col -->
+            </div><!-- end row -->
+        </div><!-- end container -->
+    </section><!-- end section -->
+
+
+
+    <section class="section clearfix section-bottom">
+        <div class="container">
+            <div class="hotel-title">
+                <h3>OUR SERVICES</h3>
+                <hr class="left">
+            </div><!-- end hotel-title -->
+            <div class="row">
+                <div class="col-md-9">
+                    <div class="service-style row">
+                        <div class="icon-container border-radius col-md-3 col-sm-3 col-xs-3">
+                            <%= image_tag '1.png' %>
+                        </div>
+                        <div class="col-md-10 col-xs-12 col-sm-10">
+                        <h5>For $5, email up to 5 questions to a local and you will get a detailed response in 36 hours.</h5>
+                        </div>
+                    </div><!-- end service -->
+
+                    <div class="service-style row">
+                        <div class="icon-container  col-md-3 col-sm-3 col-xs-3">
+                            <%= image_tag '2.png' %>
+                        </div>
+                        <div class="col-md-10 col-xs-12 col-sm-10">
+                        <h5>For $15, speak to a Spanish local for up to 30 minutes and he or she will answer any questions you have.</h5>
+                        </div>
+                    </div><!-- end service -->
+
+                    <div class="service-style row">
+                        <div class="icon-container border-radius col-md-3 col-sm-3 col-xs-3">
+                            <%= image_tag '3.png' %>
+                        </div>
+                        <div class="col-md-10 col-xs-12 col-sm-10">
+                        <h5> For $40, have a local plan a full itinerary for up to 5 days of travel for you, including lodging, transport, activities and food recommendations.</h5>
+                        </div>
+                    </div><!-- end service -->
+
+                    <div class="service-style row">
+                        <div class="icon-container border-radius col-md-3 col-sm-3 col-xs-3">
+                            <%= image_tag '4.png' %>
+                        </div>
+                        <div class="col-md-10 col-xs-12 col-sm-10">
+                        <h5>If you would like a bespoke service, please contact us using our form below</h5>
+                        </div>
+                    </div><!-- end service -->
+                </div><!-- end col -->
+
+                <div class="col-md-3 respons">
+                    <%= image_tag 'tower.png', class: "img-responsive respons-img" %>
+                </div><!-- end col -->
+            </div><!-- end row -->
+        </div><!-- end container -->
+    </section><!-- end section -->
+    
+    
+<!----
+    <section class="nopadding clearfix">
+        <div class="owl-fullwidth">
+            <div class="owl-item-full">
+               
+            </div>
+            <div class="owl-item-full">
+               
+            </div>
+            <div class="owl-item-full">
+               
+            </div>
+            <div class="owl-item-full">
+                
+            </div>
+        </div>
+    </section>
+   --->
+
+<section class="center slider">
+    <div>
+      <%= image_tag 'home_mini_slider_02.jpg' %>
     </div>
     <div>
-      </br>
-      <%= f.submit 'Send message', :class=> "btn btn-primary" %>
+      <%= image_tag 'home_mini_slider_01.jpg' %>
     </div>
-  <% end %>
-</div>
+    <div>
+      <%= image_tag 'home_mini_slider_03.jpg' %>
+    </div>
+    <div>
+      <%= image_tag 'home_mini_slider_04.jpg' %>
+    </div>
+  </section>
+ 
+    
+    
+    
+    
+    
+    <section class="section clearfix">
+        <div class="container">
+            <div class="hotel-title">
+                <h4>TOP POPULAR DESTINATIONS</h4>
+            </div><!-- end hotel-title -->
+
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="mini-desti row">
+                        <div class="col-md-4">
+                            <%= image_tag 'mini_desti_01.jpg', class: "img-responsive" %>
+                        </div><!-- end col -->
+                        <div class="col-md-8">
+                            <div class="mini-desti-title">
+                                <div class="pull-left">
+                                    <h6>Barcelona</h6>
+                                </div>
+                                <div class="pull-right">
+                                </div>
+                                <div class="clearfix"></div>
+                                <div class="mini-desti-desc">
+                                    <p>Catalan culture, distinctive architecture, lively nightlife and outdoor adventures.</p>
+                                </div>
+                            </div><!-- end title -->
+                        </div><!-- end col -->
+                    </div><!-- end mini-desti -->
+
+                    <div class="mini-desti row">
+                        <div class="col-md-4">
+                            <%= image_tag 'mini_desti_02.jpg', class: "img-responsive" %>
+                        </div><!-- end col -->
+                        <div class="col-md-8">
+                            <div class="mini-desti-title">
+                                <div class="pull-left">
+                                    <h6>Madrid</h6>
+                                </div>
+                                <div class="pull-right">
+                                </div>
+                                <div class="clearfix"></div>
+                                <div class="mini-desti-desc">
+                                    <p>Cultural hub for Spain including excellent nightlife with lots of bars, restaurants, clubs and entertainment.</p>
+                                </div>
+                            </div><!-- end title -->
+                        </div><!-- end col -->
+                    </div><!-- end mini-desti -->
+
+                    <div class="mini-desti row ">
+                        <div class="col-md-4">
+                            <%= image_tag 'mini_desti_03.jpg', class: "img-responsive" %>
+                        </div><!-- end col -->
+                        <div class="col-md-8">
+                            <div class="mini-desti-title">
+                                <div class="pull-left">
+                                    <h6>Sevilla</h6>
+                                </div>
+                                <div class="pull-right">
+                                </div>
+                                <div class="clearfix"></div>
+                                <div class="mini-desti-desc">
+                                    <p>Contagiously romantic city whose celebratory ambiance pervades its winding streets and spills out of the bars and tapas parlors.</p>
+                                </div>
+                            </div><!-- end title -->
+                        </div><!-- end col -->
+                    </div><!-- end mini-desti -->
+                    <div class="mini-desti row">
+                        <div class="col-md-4">
+                            <%= image_tag 'mini_desti_08.jpg', class: "img-responsive" %>
+                        </div><!-- end col -->
+                        <div class="col-md-8">
+                            <div class="mini-desti-title">
+                                <div class="pull-left">
+                                    <h6>Salamanca</h6>
+                                </div>
+                                <div class="pull-right">
+                                </div>
+                                <div class="clearfix"></div>
+                                <div class="mini-desti-desc">
+                                    <p>A University town with the best plaza in Spain</p>
+                                </div>
+                            </div><!-- end title -->
+                        </div><!-- end col -->
+                    </div><!-- end mini-desti -->
+                    <div class="mini-desti row noborder">
+                        <div class="col-md-4">
+                            <%= image_tag 'mini_desti_09.jpg', class: "img-responsive" %>
+                        </div><!-- end col -->
+                        <div class="col-md-8">
+                            <div class="mini-desti-title">
+                                <div class="pull-left">
+                                    <h6>Toledo</h6>
+                                </div>
+                                <div class="pull-right">
+                                </div>
+                                <div class="clearfix"></div>
+                                <div class="mini-desti-desc">
+                                    <p>Medieval Spanish with an incredibly diverse history and famous skyline, dominated by the Alcazar fortress.</p>
+                                </div>
+                            </div><!-- end title -->
+                        </div><!-- end col -->
+                    </div><!-- end mini-desti -->
+                </div><!-- end col -->
+
+                <div class="col-md-6">
+                    <div class="mini-desti row">
+                        <div class="col-md-4">
+                            <%= image_tag 'mini_desti_04.jpg', class: "img-responsive" %>
+                        </div><!-- end col -->
+                        <div class="col-md-8">
+                            <div class="mini-desti-title">
+                                <div class="pull-left">
+                                    <h6>San Sebastian</h6>
+                                </div>
+                                <div class="pull-right">
+                                </div>
+                                <div class="clearfix"></div>
+                                <div class="mini-desti-desc">
+                                    <p>Known for its food and drink,  its narrow and winding streets are full of bars and restaurants.  This city boasts the most Michelin Stars per capita in the world.</p>
+                                </div>
+                            </div><!-- end title -->
+                        </div><!-- end col -->
+                    </div><!-- end mini-desti -->
+
+                    <div class="mini-desti row">
+                        <div class="col-md-4">
+                            <%= image_tag 'mini_desti_05.jpg', class: "img-responsive" %>
+                        </div><!-- end col -->
+                        <div class="col-md-8">
+                            <div class="mini-desti-title">
+                                <div class="pull-left">
+                                    <h6>Cordoba</h6>
+                                </div>
+                                <div class="pull-right">
+                                </div>
+                                <div class="clearfix"></div>
+                                <div class="mini-desti-desc">
+                                    <p>Ancient cobblestone streets, lush flowers and beautiful tiled fountains.</p>
+                                </div>
+                            </div><!-- end title -->
+                        </div><!-- end col -->
+                    </div><!-- end mini-desti -->
+
+                    <div class="mini-desti row">
+                        <div class="col-md-4">
+                            <%= image_tag 'mini_desti_06.jpg', class: "img-responsive" %>
+                        </div><!-- end col -->
+                        <div class="col-md-8">
+                            <div class="mini-desti-title">
+                                <div class="pull-left">
+                                    <h6>Mallorca</h6>
+                                </div>
+                                <div class="pull-right">
+                                </div>
+                                <div class="clearfix"></div>
+                                <div class="mini-desti-desc">
+                                    <p>Beach resorts, sheltered coves, limestone mountains and Roman and Moorish remains.</p>
+                                </div>
+                            </div><!-- end title -->
+                        </div><!-- end col -->
+                    </div><!-- end mini-desti -->
+                     <div class="mini-desti row">
+                        <div class="col-md-4">
+                            <%= image_tag 'mini_desti_07.jpg', class: "img-responsive" %>
+                        </div><!-- end col -->
+                        <div class="col-md-8">
+                            <div class="mini-desti-title">
+                                <div class="pull-left">
+                                    <h6>Granada</h6>
+                                </div>
+                                <div class="pull-right">
+                                </div>
+                                <div class="clearfix"></div>
+                                <div class="mini-desti-desc">
+                                    <p>The famous Alhambra fortress is a required visit, as are the Alcaiceria (marketplace), the Cathedral and too many architectural sites to name.</p>
+                                </div>
+                            </div><!-- end title -->
+                        </div><!-- end col -->
+                    </div><!-- end mini-desti -->
+                </div><!-- end col -->
+            </div><!-- end row -->
+        </div><!-- end container -->
+    </section><!-- end section -->
+
+
+
+
+
+    <section class="section section-light clearfix">
+        <div class="container">
+            <div class="top-destinations clearfix">
+                <div class="hotel-title text-center">
+                    <h3>MEET OUR LOCALS</h3>
+                    <hr>
+                </div>
+            </div><!-- end related-hotels -->
+            <div class="clearfix">
+                <div class="row">
+                    <div class="col-md-4 col-sm-6 col-xs-12">
+                        <div class="clearfix">
+                            <div class="hotel-wrapper">
+                                <div class="post-media">
+                                    <a href="hotel-single.html"><%= image_tag 'hotel_02.png', class: "img-responsive" %></a>
+                                </div><!-- end media -->
+                                <div class="post-title clearfix">
+                                    <div class="pull-left">
+                                    </div><!-- end left -->
+                                    <div class="pull-right">
+                                    </div><!-- end left -->
+                                </div><!-- end title -->
+                                <p>Tere is originally from Valencia but now lives in Madrid. Her interests include jogging, biking, and enjoying the weekend markets. She loves to cook; but even more than that, she loves to eat! She can help you find the best tapas spots in Madrid and Central Spain.</p>
+                            </div><!-- end hotel-wrapper -->
+                        </div><!-- end clearfix -->
+                    </div><!-- end col -->
+
+                    <div class="col-md-4 col-sm-6 col-xs-12">
+                        <div class="clearfix">
+                            <div class="hotel-wrapper">
+                                <div class="post-media">
+                                    <a href="hotel-single.html"><%= image_tag 'hotel_04.png', class: "img-responsive" %></a>
+                                </div><!-- end media -->
+                                <div class="post-title clearfix">
+                                    <div class="pull-left">
+                                    </div><!-- end left -->
+                                    <div class="pull-right">
+                                    </div><!-- end left -->
+                                </div><!-- end title -->
+                                <p>Ignacio is a bartender in the Gràcia area of Barcelona. His interests include craft beer, cocktails, and spending time at the local beaches on weekends. His favorite place to eat is Quimet &amp; Quimet, a restaurant featured on shows like Anthony Bourdain and has the montaditos in Barcelona.</p>
+                            </div><!-- end hotel-wrapper -->
+                        </div><!-- end clearfix -->
+                    </div><!-- end col -->
+
+                    <div class="col-md-4 col-sm-6 col-xs-12">
+                        <div class="clearfix">
+                            <div class="hotel-wrapper">
+                                <div class="post-media">
+                                    <a href="hotel-single.html"><%= image_tag 'hotel_03.png', class: "img-responsive" %></a>
+                                </div><!-- end media -->
+                                <div class="post-title clearfix">
+                                    <div class="pull-left">
+                                    </div><!-- end left -->
+                                    <div class="pull-right">
+                                    </div><!-- end left -->
+                                </div><!-- end title -->
+                                <p>Ximena is a true explorer. She has lived in Seville, Toledo, San Sebastian, and Barcelona. Her favorite activity is rock climbing the cliffs outside of Barcelona. Her favorite place to eat is Ca Calbet, a bed and breakfast located in the small town of Margalef which makes the best patas bravas in Spain.</p>
+                            </div><!-- end hotel-wrapper -->
+                        </div><!-- end clearfix -->
+                    </div><!-- end col -->
+                </div><!-- end row -->
+            </div>
+        </div><!-- end container -->
+    </section><!-- end section -->
+
+
+    <section id="here321" class="section contact-home fullscreen background parallax"  data-img-width="1921" data-img-height="665" data-diff="20">
+        <div class="container">
+        <div class="home-contact">
+            <h5>Contact Form</h5>
+            <p>Any concerns? Please send us an email and we will respond within 1 business day.</p>
+            <div id="contact_form" class="contact_form">
+                <div id="message"></div>
+                <form id="contactform" class="row" action="http://trendingtemplates.com/demos/trips/contact.php" name="contactform" method="post">
+                    <div class="col-md-12 col-sm-12 col-xs-12">
+                    <div class="form-group">
+                    <input type="text" name="name" id="name" class="form-control" placeholder="Name (required)">
+                    </div>
+                    </div>
+                    <div class="col-md-12 col-sm-12 col-xs-12">
+                    <div class="form-group">
+                    <input type="text" name="email" id="email" class="form-control" placeholder="Email required)">
+                    </div>
+                    </div>
+                    <div class="col-md-12 col-sm-12 col-xs-12">
+                    <div class="form-group">
+                    <textarea class="form-control" name="comments" id="comments" rows="8" placeholder="Comments (required)"></textarea>
+                    </div>
+                    <button type="submit" value="SEND" id="submit" class=" btn btn-primary btn-lg border-radius">SUBMIT</button>
+                    </div>
+                </form>
+            </div><!-- end contact-form -->
+            </div>
+        </div><!-- end container -->
+    </section><!-- end section -->
+
+    <footer class="footer home clearfix">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-2 col-sm-6 col-xs-12 text-center">
+                    <div class="flogo">
+                        <%= image_tag 'logo2.png' %>
+                    </div><!-- end logo -->
+                </div><!-- end col -->
+                <div class="col-md-5 col-sm-6 col-xs-12">
+                    <div class="widget">
+                        <div class="widget-title">
+                            <h3>ABOUT</h3>
+                        </div><!-- end title -->
+                        <div class="textwidget">
+                            <p>MiCasa was founded by a group of people who have a passion for travel and authentic experiences. We think the best way to travel is to travel like a local!</p>
+                            <p>#SuCasaEsMiCasa</p>
+                        </div><!-- end textwidget -->
+                    </div><!-- end widget -->
+                </div><!-- end col -->
+                <div class="col-md-5 col-sm-6 col-xs-12">
+                    <div class="widget">
+                        <div class="widget-title">
+                            <h3>NEWSLETTER</h3>
+                        </div><!-- end title -->
+                        <div class="newsletterwidget">
+                            <p>Subscribe to our newsletter to receive news & updates. We promise not spamming you, super promise! </p>
+                            <form id="newsletter" class="form-inline">
+                                <div class="form-group">
+                                    <input type="text" class="form-control border-radius" placeholder="Your email here">
+                                </div>
+                                <button type="submit" class="btn btn-primary btn-lg border-radius">Send</button>
+                            </form>
+                        </div><!-- end newsletter widget -->
+                    </div><!-- end widget -->
+                </div><!-- end col -->
+            </div><!-- end row -->
+        </div><!-- end container -->
+    </footer><!-- end copyrights -->
+
+    <div class="copyrights clearfix">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6 text-left">
+                    <p>COPYRIGHT Micasa 2016. ALL RIGHT RESERVED</p>
+                </div><!-- end col -->
+
+                <div class="col-md-6 text-right">
+                    <div class="social-footer">
+                        <a href="#" title="Instagram"><i class="icon-instagrem"></i></a>
+                        <a href="#" title="Facebook"><i class="icon-facebook"></i></a>
+                        <a href="#" title="Pinterest"><i class="icon-pinterest"></i></a>
+                        <a href="#" title="Twitter"><i class="icon-twitter"></i></a>
+                    </div><!-- end social-footer -->
+                </div><!-- end col -->
+            </div><!-- end row -->
+        </div><!-- end container -->
+    </div><!-- end copyrights -->
+</div><!-- end wrapper -->
+

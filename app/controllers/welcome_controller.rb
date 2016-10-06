@@ -1,5 +1,4 @@
 class WelcomeController < ApplicationController
-  
   def index
     @contact = Contact.new
   end
@@ -8,10 +7,11 @@ class WelcomeController < ApplicationController
     @contact = Contact.new(params[:contact])
     @contact.request = request
     if @contact.deliver
-      flash.now[:notice] = 'Thank you for your message. We will contact you soon!'
+      flash.now[:error] = nil
+      
     else
       flash.now[:error] = 'Cannot send message.'
-      render :new
+      render :index
     end
   end
 end

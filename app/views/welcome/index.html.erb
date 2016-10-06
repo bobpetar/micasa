@@ -96,64 +96,84 @@
                             <div role="tabpanel" class="tab-pane active" id="tab_01">
                                 <h6>Email Questions</h6>
                                 <form class="bookform form-inline row">
+                                    <%= form_for @contact do |f| %>
                                     <div class="form-group col-md-12 col-sm-6 col-xs-12">
-                                        <input type="text" class="form-control" placeholder="Trip Start">
+                                        <%= f.text_field :date, :required => true, :data => {:provide => "datepicker"}, class: "form-control datepicker", placeholder: "Trip Start" %>
                                     </div>
                                     <div class="form-group col-md-12 col-sm-6 col-xs-12">
-                                        <input type="text" class="form-control" placeholder="Email">
+                                        <%= f.email_field :email, :required => true, placeholder: "Email", class: "form-control" %>
+                                    </div>
+                                    <div class= "hidden">
+                                      <%= f.text_field :nickname, :hint => 'Leave this field blank!' %>
                                     </div>
 
                                     <div class="form-group col-md-12 col-sm-6 col-xs-12">
-                                        <button type="submit" class="btn btn-primary btn-block"><i class="icon-search"></i> Get Started</button>
+                                        <%= f.submit 'Send message', :class=> "btn btn-primary btn-block" %>
                                     </div>
+                                    <% end %>
                                 </form>
                             </div><!-- end tab-pane -->
 
                             <div role="tabpanel" class="tab-pane" id="tab_02">
                                 <h6>Speak with a Local</h6>
                                 <form class="bookform form-inline row">
+                                    <%= form_for @contact do |f| %>
                                     <div class="form-group col-md-12 col-sm-6 col-xs-12">
-                                        <input type="text" class="form-control" placeholder="Trip Start">
+                                        <%= f.text_field :date, :required => true, :data => {:provide => "datepicker"}, class: "form-control datepicker", placeholder: "Trip Start" %>
                                     </div>
                                     <div class="form-group col-md-12 col-sm-6 col-xs-12">
-                                        <input type="text" class="form-control" placeholder="Email">
+                                        <%= f.email_field :email, :required => true, placeholder: "Email", class: "form-control" %>
+                                    </div>
+                                    <div class= "hidden">
+                                      <%= f.text_field :nickname, :hint => 'Leave this field blank!' %>
                                     </div>
 
                                     <div class="form-group col-md-12 col-sm-6 col-xs-12">
-                                        <button type="submit" class="btn btn-primary btn-block"><i class="icon-search"></i> Get Started</button>
+                                        <%= f.submit 'Send message', :class=> "btn btn-primary btn-block" %>
                                     </div>
+                                    <% end %>
                                 </form>
                             </div><!-- end tab-pane -->
 
                             <div role="tabpanel" class="tab-pane" id="tab_03">
                                 <h6>Custom Trip Planning</h6>
                                 <form class="bookform form-inline row">
+                                    <%= form_for @contact do |f| %>
                                     <div class="form-group col-md-12 col-sm-6 col-xs-12">
-                                        <input type="text" class="form-control" placeholder="Trip Start">
+                                        <%= f.text_field :date, :required => true, :data => {:provide => "datepicker"}, class: "form-control datepicker", placeholder: "Trip Start" %>
                                     </div>
                                     <div class="form-group col-md-12 col-sm-6 col-xs-12">
-                                        <input type="text" class="form-control" placeholder="Email">
+                                        <%= f.email_field :email, :required => true, placeholder: "Email", class: "form-control" %>
+                                    </div>
+                                    <div class= "hidden">
+                                      <%= f.text_field :nickname, :hint => 'Leave this field blank!' %>
                                     </div>
 
                                     <div class="form-group col-md-12 col-sm-6 col-xs-12">
-                                        <button type="submit" class="btn btn-primary btn-block"><i class="icon-search"></i> Get Started</button>
+                                        <%= f.submit 'Send message', :class=> "btn btn-primary btn-block" %>
                                     </div>
+                                    <% end %>
                                 </form>
                             </div><!-- end tab-pane -->
 
                             <div role="tabpanel" class="tab-pane" id="tab_04">
                                 <h6>Custom Service</h6>
                                 <form class="bookform form-inline row">
+                                    <%= form_for @contact do |f| %>
                                     <div class="form-group col-md-12 col-sm-6 col-xs-12">
-                                        <input type="text" class="form-control" placeholder="Trip Start">
+                                        <%= f.text_field :date, :required => true, :data => {:provide => "datepicker"}, class: "form-control datepicker", placeholder: "Trip Start" %>
                                     </div>
                                     <div class="form-group col-md-12 col-sm-6 col-xs-12">
-                                        <input type="text" class="form-control" placeholder="Email">
+                                        <%= f.email_field :email, :required => true, placeholder: "Email", class: "form-control" %>
+                                    </div>
+                                    <div class= "hidden">
+                                      <%= f.text_field :nickname, :hint => 'Leave this field blank!' %>
                                     </div>
 
                                     <div class="form-group col-md-12 col-sm-6 col-xs-12">
-                                        <button type="submit" class="btn btn-primary btn-block"><i class="icon-search"></i> Get Started</button>
+                                        <%= f.submit 'Send message', :class=> "btn btn-primary btn-block" %>
                                     </div>
+                                    <% end %>
                                 </form>
                             </div><!-- end tab-pane -->
 
