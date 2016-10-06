@@ -10,14 +10,14 @@
  * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
  * file per style scope.
  *
+ *= require slick
+ *= require slick-theme
+ *= require bootstrap-datepicker3
  *= require_tree .
  *= require_self
  */
 
-@import 'tripsfonts.css.scss';
-@import 'font-awesome.css.scss';
-@import 'bootstrap-select.css.scss';
-@import 'owl-carousel.css.scss';
+
 
 @font-face {
 font-family: 'aqua_grotesqueregular';
